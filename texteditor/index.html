@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--custom css-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!--fonts link-->
+    <link rel="stylesheet" href="./css/all.min.css">
     <title>textEditor</title>
 </head>
 <body>
-    
+    <div class="editor-container">
+        <div class="toolbar">
+          <button class="bold-button"><i class="fas fa-bold"></i></button>
+          <button class="italic-button"><i class="fas fa-italic"></i></button>
+          <button class="underline-button"><i class="fas fa-underline"></i></button>
+          <button class="link-button"><i class="fas fa-link"></i></button>
+          <button class="heading-button"><i class="fas fa-heading"></i></button>
+        </div>
+        <div class="content" contenteditable="true"></div>
+      </div>
+
+      <!--custom script-->
+      <link rel="stylesheet" href="./js/index.js">
 </body>
 </html>
