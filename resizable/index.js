@@ -1,30 +1,26 @@
-const resizable = document.querySelector('.resizable');
-const handle = resizable.querySelector('.handle');
-let isResizing = false;
-let lastX;
-let lastY;
+const resizable  = document.querySelector('.resizable');
+const handle = document.querySelector('.handle')
 
-handle.addEventListener('mousedown', function(e) {
-  isResizing = true;
-  lastX = e.clientX;
-  lastY = e.clientY;
-});
+let is_Risizing = false;
+let lastX ; let lastY;
+handle.addEventListener('mousedown',(e)=> {
+    is_Risizing=true;
+    lastX = e.clinetX;
+    lastY = e.clinetY;
+})
 
-document.addEventListener('mousemove', function(e) {
-  if (!isResizing) return;
+document.addEventListener('mousemove',(e)=> {
+    if (!is_Risizing) return ;
+    let diffX = e.clientX - lastX;
+    let diffY = e.clientY - lastY;
 
-  const diffX = e.clientX - lastX;
-  const diffY = e.clientY - lastY;
-  const newWidth = resizable.offsetWidth + diffX;
-  const newHeight = resizable.offsetHeight + diffY;
+    resizable.style.width = resizable.offsetWidth + diffX+'px';
+    resizable.style.height = resizable.offsetHeight + diffX+'px';
+    lastX = e.clientX;
+    lastY  = e.clientY;
 
-  resizable.style.width = newWidth + 'px';
-  resizable.style.height = newHeight + 'px';
+})
 
-  lastX = e.clientX;
-  lastY = e.clientY;
-});
-
-document.addEventListener('mouseup', function(e) {
-  isResizing = false;
-});
+document.addEventListener('mouseup',()=> {
+    is_Risizing=false;
+})
